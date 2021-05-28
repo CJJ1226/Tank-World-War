@@ -1,0 +1,12 @@
+.plastic/
+.vs/
+.vsconfig
+Assembly-CSharp.csproj
+Library/
+Logs/
+Packages/
+Tank World War.sln
+Temp/
+UserSettings/
+ignore.conf
+obj/
