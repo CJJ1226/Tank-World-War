@@ -5,6 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float moveSpeed = 10;
+
+    public bool isPlayerBullet;
+
+    //public bool isPlayerBullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,20 +20,35 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(transform.up * moveSpeed * Time.deltaTime, Space.World);
     }
+    //Åö×²¼ì²â
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.tag)
         {
             case "Tank":
-                collision.SendMessage("Die");
+                if (!isPlayerBullet)
+                {
+                    collision.SendMessage("Die");
+                    Destroy(gameObject);
+                }
                 break;
             case "Heart":
+                collision.SendMessage("Die");
+                Destroy(gameObject);
                 break;
             case "Enemy":
+                if (isPlayerBullet)
+                {
+                    collision.SendMessage("Die");
+                    Destroy(gameObject);
+                }
                 break;
             case "Wall":
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
                 break;
             case "Barrier":
+                Destroy(gameObject);
                 break;
             default:
                 break;

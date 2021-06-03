@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7646866833989462802}
   - component: {fileID: -3183013790975993799}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  isPlayerBullet: 1
 --- !u!61 &-7646866833989462802
 BoxCollider2D:
   m_ObjectHideFlags: 0
